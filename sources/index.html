@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sample CRUD with pure Javascript</title>    
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="/css/site.css" />    
+</head>
+<body onload="getItems()">
+    <header>
+        <h1>SAMPLE CRUD JAVASCRIPT</h1>
+    </header>
+    <div class="body-content">
+        <div class="leftHalf">
+            <table id="tblTodo" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th class="col-md-3">
+                            Name
+                        </th>
+                        <th class="col-md-4">
+                            Date
+                        </th>
+                        <th class="col-md-2">
+                            IsComplete
+                        </th>
+                        <th class="col-md-3">
+                            Actions
+                        </th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <div class="rightHalf">
+           <form id="frmTodo" class="form-horizontal" method="post" enctype="multipart/form-data">
+                <fieldset>
+                    <legend>Register TODO</legend>
+                     <!-- Hidden field-->
+                    <input id="hdnId" name="hdnId" type="hidden" />
+                     <!-- Text input-->
+                    <div class="form-group">
+                        <label class="" for="txtName">Name</label>
+                        <div class="">
+                            <input id="txtName" name="txtName" type="text" placeholder="" class="form-control input-md" required="" />
+                        </div>
+                    </div>
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="" for="txtDate">Date (format: "YYYY-MM-DDTHH:MM:SS")</label>
+                        <div class="">
+                            <input id="txtDate" name="txtDate" type="text" placeholder="" class="form-control input-md" required="" />
+                        </div>
+                    </div>
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="" for="txtIsComplete">IsComplete</label>
+                        <div class="">
+                            <input id="txtIsComplete" name="txtIsComplete" type="text" placeholder="" class="form-control input-md" />
+                        </div>
+                    </div>
+                    <!-- Save Button -->
+                    <div class="form-group">
+                        <button id="btnSave" type="button" name="btnSave" value="Save" onclick="saveItem()">Save</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <hr />
+        <p>&copy; 2016 - Sample CRUD Javascript</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="/js/httputil.js"></script>
+    <script src="/js/todo_api.js"></script>
+</body>
+</html>
